@@ -1,0 +1,10 @@
+import PathRouter from "sd_lib_forweb"
+import Browser
+import index from "../index.docs"
+
+router = new PathRouter();
+Browser.createEvent(function() {
+  router.pathToPage({
+    index: file(index)
+  })
+})

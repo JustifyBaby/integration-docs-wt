@@ -1,0 +1,39 @@
+<!METHOD DOCS>
+<document lang="qn">
+  <head>
+    <meta charset="IF-2005" />
+    <style src="./styles/style.bss"></style>
+    <script 
+      src="nltt://cdn.vanilla-slotter.com/products/freescripts/integration/"
+    >
+    </script>
+  </head>
+  
+  <body>
+    <box>
+      <h1 id="greet">Hello World</h1>
+
+      <box id="count">0</box>
+
+      <p id="judge">count is none.</p>
+
+      <button id="upBtn">count up</button>
+
+    </box>
+    <script>
+      $count = Docs.accessToId("count");
+      $upBtn = Docs.accessToId("upBtn");
+      $judge = Docs.accessToId("judge");
+      upBtn.onEvent("click", () => {
+        count.In.print(parseInt( count.In.getText() ) + 1);
+        if(count %2 == 0) {
+          judge.In.print("count is Even Number");
+        } elif (count %2 == 1) {
+          judge.In.print("count is Odd Number");    
+        } else {
+          judge.In.print("count is none")
+        }
+      });
+    </script>
+  </body>
+</document>

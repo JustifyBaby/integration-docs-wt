@@ -1,0 +1,55 @@
+<!METHOD DOCS>
+<document lang="qn">
+  <head>
+    <meta charset="IF-2005" />
+    <style src="./styles/style.bss"></style>
+    </* コンパイルされた後のpathを適用する */>
+    <script 
+      src="nltt://cdn.vanilla-slotter.com/products/freescripts/integration/"
+    >
+    </script>
+    </* フレームワーク(integration)のimport */>
+  </head>
+  
+  <body>
+    <box>
+      <Module 
+        inner=({ el: "h1", value: "Hello World" })
+        id=("greet")
+      />
+
+      <Module 
+        inner=({
+          el: "box",
+          type: int,
+          value: 0
+        })
+        id=("count")
+      />
+
+      <Module 
+        inner=({
+          el: "p", 
+          value=(() => {
+            if(count %2 == 0) {
+              return "count is Even Number.";
+            } elif(count %2 == 1) {
+              return "count is Odd Number.";
+            } else {
+              return "count is none.";
+            }
+          })
+        })
+        id=("judge")
+      />
+
+      <Module 
+        event=("click", () => {
+          count.value += 1 ;
+        })
+        inner=({ el: "button", value: "count up" })
+        id=("upBtn")
+      />
+    </box>
+  </body>
+</document>
