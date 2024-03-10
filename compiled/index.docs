@@ -18,21 +18,31 @@
       <p id="judge">count is none.</p>
 
       <button id="upBtn">count up</button>
+      <button id="downBtn">count down</button>
 
     </box>
     <script>
       $count = Docs.accessToId("count");
       $upBtn = Docs.accessToId("upBtn");
+      $downBtn = Docs.accessToId("downBtn");
       $judge = Docs.accessToId("judge");
-      upBtn.onEvent("click", () => {
-        count.In.print(parseInt( count.In.getText() ) + 1);
-        if(count %2 == 0) {
+      $countInt = count.parseInt(count.In.getText());
+      judgeF () => {
+        if(countInt %2 == 0) {
           judge.In.print("count is Even Number");
-        } elif (count %2 == 1) {
+        } elif (countInt %2 == 1) {
           judge.In.print("count is Odd Number");    
         } else {
           judge.In.print("count is none")
         }
+      }
+      upBtn.onEvent("click", () => {
+        count.In.print(countInt += 1);
+        judgeF();
+      });
+      downBtn.onEvent("click", () => {
+        count.In.print(countInt += -1);
+        judgeF();
       });
     </script>
   </body>

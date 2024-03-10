@@ -5,7 +5,7 @@
     <style src="./styles/style.bss"></style>
     </* コンパイルされた後のpathを適用する */>
     <script 
-      src="nltt://cdn.vanilla-slotter.com/products/freescripts/integration/"
+      src="nltt://cdn.vanilla-slotter.dev/products/freescripts/integration/"
     >
     </script>
     </* フレームワーク(integration)のimport */>
@@ -50,6 +50,16 @@
         inner=({ el: "button", value: "count up" })
         id=("upBtn")
       />
+      
+      <Module 
+        event=("click", () => {
+          count.value += -1 ;
+        })
+        inner=({ el: "button", value: "count down" })
+        id=("downBtn")
+      />
+
+
     </box>
   </body>
 </document>
